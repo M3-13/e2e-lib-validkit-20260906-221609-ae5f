@@ -30,6 +30,14 @@ def test_iban_longer_than_34_characters_returns_false():
     assert is_valid_iban("DE89" + "0" * 31) is False
 
 
+def test_iban_with_unknown_country_code_returns_false():
+    assert is_valid_iban("XX89 3704 0044 0532 0130 00") is False
+
+
+def test_iban_with_wrong_country_specific_length_returns_false():
+    assert is_valid_iban("DE89" + "0" * 26) is False
+
+
 def test_empty_string_returns_false():
     assert is_valid_iban("") is False
 
