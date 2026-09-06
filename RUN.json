@@ -1,0 +1,15 @@
+{
+  "runcontract": 1,
+  "services": [
+    {
+      "name": "validkit",
+      "dir": ".",
+      "stack": "python",
+      "kind": "cli",
+      "install": [
+        ["${python}", "-m", "pip", "install", "-q", "-e", "."]
+      ],
+      "start": ["${python}", "-m", "pytest", "-q"]
+    }
+  ]
+}
